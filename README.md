@@ -1,58 +1,130 @@
-# Svelte library
+# Resume Builder
 
-Everything you need to build a Svelte library, powered by [`sv`](https://npmjs.com/package/sv).
+A comprehensive resume builder application built with SvelteKit that allows users to create professional resumes with multiple templates, PDF download functionality, and portfolio sharing.
 
-Read more about creating a library [in the docs](https://svelte.dev/docs/kit/packaging).
+## Features
 
-## Creating a project
+- **Multiple Templates**: Choose from Modern, Classic, and Creative resume templates
+- **Comprehensive Form**: Fill in all possible resume fields including:
+  - Personal Information
+  - Work Experience
+  - Education
+  - Skills
+  - Projects
+  - Certifications
+  - Languages
+  - Volunteer Experience
+  - Publications
+  - Awards
+  - References
+- **PDF Download**: Generate and download high-quality PDF resumes
+- **Portfolio Sharing**: Share resumes as online portfolios with unique URLs
+- **Data Persistence**: Save and manage multiple resumes locally
+- **Real-time Preview**: Preview your resume as you build it
+- **Responsive Design**: Works on desktop and mobile devices
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Getting Started
 
-```sh
-# create a new project in the current directory
-npx sv create
+### Prerequisites
 
-# create a new project in my-app
-npx sv create my-app
+- Node.js (version 16 or higher)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd abiography
 ```
 
-## Developing
+2. Install dependencies:
+```bash
+npm install
+```
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```sh
+3. Start the development server:
+```bash
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
 
-Everything inside `src/lib` is part of your library, everything inside `src/routes` can be used as a showcase or preview app.
+4. Open your browser and navigate to `http://localhost:5173`
 
-## Building
+## Usage
 
-To build your library:
+1. **Create a New Resume**: Click "Create Resume" on the home page
+2. **Choose a Template**: Select from Modern, Classic, or Creative templates
+3. **Fill in Information**: Use the sidebar navigation to fill in different sections
+4. **Preview**: Click "Show Preview" to see how your resume looks
+5. **Save**: Click "Save Resume" to store your progress
+6. **Download**: Click "Download PDF" to get a PDF version
+7. **Share**: Click "Copy Portfolio URL" to share your resume online
 
-```sh
-npm pack
+## Templates
+
+### Modern Template
+- Clean and contemporary design
+- Blue color scheme
+- Professional layout with icons
+- Perfect for tech and creative industries
+
+### Classic Template
+- Traditional black and white design
+- Serif fonts for formal appearance
+- Clean, minimalist layout
+- Ideal for corporate and academic positions
+
+### Creative Template
+- Colorful and modern design
+- Gradients and visual elements
+- Dynamic layout with icons
+- Great for design and creative roles
+
+## Technical Details
+
+- **Framework**: SvelteKit
+- **Styling**: Tailwind CSS
+- **PDF Generation**: jsPDF + html2canvas
+- **Storage**: LocalStorage for data persistence
+- **TypeScript**: Full type safety
+- **Responsive**: Mobile-first design
+
+## Project Structure
+
+```
+src/
+├── lib/
+│   ├── components/
+│   │   ├── ResumeForm.svelte
+│   │   └── templates/
+│   │       ├── ModernTemplate.svelte
+│   │       ├── ClassicTemplate.svelte
+│   │       └── CreativeTemplate.svelte
+│   ├── utils/
+│   │   ├── pdfGenerator.ts
+│   │   └── storage.ts
+│   └── types.ts
+└── routes/
+    ├── +page.svelte
+    └── portfolio/
+        └── [id]/
+            └── +page.svelte
 ```
 
-To create a production version of your showcase app:
+## Building for Production
 
-```sh
+```bash
 npm run build
 ```
 
-You can preview the production build with `npm run preview`.
+## Contributing
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
 
-## Publishing
+## License
 
-Go into the `package.json` and give your package the desired name through the `"name"` option. Also consider adding a `"license"` field and point it to a `LICENSE` file which you can create from a template (one popular option is the [MIT license](https://opensource.org/license/mit/)).
-
-To publish your library to [npm](https://www.npmjs.com):
-
-```sh
-npm publish
-```
+This project is open source and available under the MIT License.
